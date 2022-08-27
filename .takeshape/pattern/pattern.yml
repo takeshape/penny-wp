@@ -1,0 +1,26 @@
+name: Penny Ecommerce
+description: "This pattern is for our Penny starter. It composes 9 popular e-commerce services into a single GraphQL API. Services include Shopify, OpenID, Klaviyo, REVIEWS.io, Voucherify, ShipEngine, Gorgias, and reCAPTCHA."
+icon: dollar-sign
+color: "#95bf46"
+categories:
+  - user authentication
+  - api indexing
+  - customer reviews
+  - shipping management
+  - referrals
+  - newsletter management
+  - email marketing
+  - customer rewards
+  - loyalty points
+  - product subscriptions
+  - e-commerce
+  - next.js
+  - tailwind
+  - shopify admin
+  - shipengine
+  - gorgias
+  - reCAPTCHA
+  - voucherify
+  - REVIEWS.io
+  - klaviyo
+  - openid

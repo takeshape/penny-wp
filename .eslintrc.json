@@ -1,0 +1,57 @@
+{
+  "plugins": [
+    "json-format"
+  ],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "no-unreachable": "error",
+    "no-console": "error"
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.test.*"
+      ],
+      "rules": {
+        "no-console": "off"
+      }
+    },
+    {
+      "files": [
+        "scripts/**/*"
+      ],
+      "rules": {
+        "no-console": "off"
+      }
+    },
+    {
+      "extends": [
+        "plugin:mdx/recommended"
+      ],
+      "files": [
+        "**/*.{mdx,md}"
+      ],
+      "rules": {
+        "indent": "off"
+      },
+      "settings": {
+        "mdx/code-blocks": true,
+        "mdx/language-mapper": {}
+      }
+    },
+    {
+      "extends": [
+        "plugin:storybook/recommended"
+      ],
+      "files": [
+        "**/*.stories.*"
+      ]
+    }
+  ],
+  "parserOptions": {
+    "ecmaVersion": 12
+  }
+}

@@ -1,0 +1,332 @@
+[
+  {
+    "projectId": "06ccc3dc-a9da-4f5b-9142-5a104db52ee3",
+    "conditions": {},
+    "updated": 1656001468015,
+    "permissions": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Query.collectionByHandleWithTtl"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Query.collectionsWithTtl"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Query.getFooter"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Query.getNavigation"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Query.productsWithTtl"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Query.productByHandleWithTtl"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Query.getStorefront"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Query.getPageList"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Query.getAssetList"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Query.search"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Query.getTrustpilotProductReviews"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Mutation.addMembers"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Mutation.createCart"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Mutation.createCustomer"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Mutation.recoverCustomerAccount"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Mutation.createTicket"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Mutation.createZendeskTicket"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:shape:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:*"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "shape:query"
+          ]
+        }
+      ]
+    },
+    "created": 1650556805898,
+    "name": "anonymous"
+  },
+  {
+    "projectId": "06ccc3dc-a9da-4f5b-9142-5a104db52ee3",
+    "conditions": {
+      "ForAllValues:StringEquals": {
+        "claims:provider": [
+          "oidc"
+        ]
+      }
+    },
+    "updated": 1656001408266,
+    "permissions": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Query.getMyAdminCustomer"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Query.getMyLoyaltyCard"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Query.getMyNewsletterSubscriptions"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Mutation.subscribeMyEmailToNewsletter"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Mutation.unsubscribeMyEmailFromNewsletter"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Mutation.addMembers"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Mutation.createTicket"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:shape:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:*"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "shape:query"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Mutation.createMyProductReview"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        }
+      ]
+    },
+    "created": 1650556913648,
+    "name": "authenticated"
+  },
+  {
+    "projectId": "06ccc3dc-a9da-4f5b-9142-5a104db52ee3",
+    "conditions": {},
+    "updated": 1652374767855,
+    "permissions": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Resource": [
+            "ts:workflow:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:*"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "workflow:*"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:workflow-step:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:*"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "workflow-step:*"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Query.*"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:graphql:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:Mutation.*"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "graphql:execute"
+          ]
+        },
+        {
+          "Resource": [
+            "ts:shape:06ccc3dc-a9da-4f5b-9142-5a104db52ee3:*"
+          ],
+          "Effect": "Allow",
+          "Action": [
+            "shape:query"
+          ]
+        }
+      ]
+    },
+    "created": 1650556947908,
+    "name": "webhook"
+  }
+]
