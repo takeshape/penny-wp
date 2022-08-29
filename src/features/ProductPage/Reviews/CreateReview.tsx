@@ -57,11 +57,8 @@ export const CreateReview = (props: ReviewsProps) => {
     [createProductReview, sku]
   );
 
-  const success = createProductReviewResponse?.result.success ?? false;
-
-  const error = useMemo(() => {
-    return mutationError ?? createProductReviewResponse?.result.success === false;
-  }, [createProductReviewResponse?.result.success, mutationError]);
+  const success = createProductReviewResponse?.result.status === 'success' ?? false;
+  const error = mutationError ?? createProductReviewResponse?.result.status === 'error';
 
   const handleClose = useCallback(() => {
     setIsOpen(false);

@@ -115,11 +115,11 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   const product = getProduct(data);
 
   return {
-    notFound: !Boolean(product),
+    notFound: !product,
     revalidate: pageRevalidationTtl,
     props: {
       // IMPORTANT This allows state to reset on NextLink route changes
-      key: product.id,
+      key: product?.id,
       // Don't index lighthouse test urls
       noindex: handle === lighthouseHandle,
       navigation,

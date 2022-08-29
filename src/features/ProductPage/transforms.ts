@@ -42,7 +42,7 @@ import {
 
 type Shopify_Collection = ProductPageShopifyProductResponse['product']['collections']['nodes'][0];
 
-export function getProduct(response: ProductPageShopifyProductResponse): ProductPageProduct {
+export function getProduct(response: ProductPageShopifyProductResponse): ProductPageProduct | null {
   const shopifyProduct = response?.product;
 
   if (!shopifyProduct) {
@@ -140,7 +140,7 @@ export function getTrustpilotProductReviewsPage(
 export function getTrustpilotProductReviews(
   response: ProductPageShopifyProductResponse
 ): TrustpilotProductPageReviewsReviewList {
-  const reviews = response?.product.trustpilotReviews;
+  const reviews = response?.product?.trustpilotReviews;
 
   if (!reviews) {
     return null;
@@ -150,7 +150,7 @@ export function getTrustpilotProductReviews(
 }
 
 export function getTrustpilotReviewsSummary(response: ProductPageShopifyProductResponse): TrustpilotSummary {
-  const summary = response?.product.trustpilotReviewsSummary;
+  const summary = response?.product?.trustpilotReviewsSummary;
 
   if (!summary) {
     return null;

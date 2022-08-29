@@ -13,7 +13,9 @@ export const retryGraphqlThrottle = async <T>(
   } catch (e) {
     if (e instanceof ApolloError && e.message === 'Throttled' && attempt < 10) {
       // Exponential backoff with jitter
-      await sleep(Math.round(2 ** attempt * 10 + Math.random() * 1000));
+      const delay = Math.round(2 ** attempt * 100 + Math.random() * 1000);
+      // eslint-disable-next-line no-console
+      await sleep(delay);
       return await retryGraphqlThrottle(execute, attempt + 1);
     } else {
       throw e;
