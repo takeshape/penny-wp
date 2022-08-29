@@ -2205,6 +2205,63 @@
         "shape": "CreateTicketResponse"
       }
     },
+    "createTicket": {
+      "args": {
+        "type": "object",
+        "properties": {
+          "email": {"type": "string"},
+          "message": {"type": "string"},
+          "recaptchaToken": {"type": "string"}
+        },
+        "required": ["email", "message", "recaptchaToken"]
+      },
+      "resolver": {
+        "compose": [
+          {
+            "id": "recaptcha",
+            "name": "rest:post",
+            "service": "recaptcha",
+            "path": "/siteverify",
+            "searchParams": {
+              "ops": [{"path": "response", "mapping": "$args.recaptchaToken"}]
+            }
+          },
+          {
+            "id": "gorgiasCreateTicket",
+            "name": "rest:post",
+            "service": "gorgias",
+            "path": "/tickets",
+            "json": {
+              "ops": [
+                {"path": "customer.email", "mapping": "$args.email"},
+                {
+                  "path": "messages",
+                  "value": [
+                    {
+                      "channel": "email",
+                      "from_agent": false,
+                      "source": {
+                        "to": [
+                          {"address": "qw72eg20ez05v4dy@emails.gorgias.com"}
+                        ]
+                      },
+                      "via": "api"
+                    }
+                  ]
+                },
+                {"path": "messages[0].body_text", "mapping": "$args.message"},
+                {
+                  "path": "messages[0].source.from.address",
+                  "mapping": "$args.email"
+                }
+              ]
+            }
+          }
+        ],
+        "results": {"ops": [{"path": "$", "mapping": "$finalResolver"}]}
+      },
+      "shape": "CreateTicketResponse"
+    },
     "createZendeskTicket": {
       "args": {
         "type": "object",
