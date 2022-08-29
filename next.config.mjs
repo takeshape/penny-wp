@@ -135,6 +135,10 @@ const nextConfig = {
         {
           protocol: 'https',
           hostname: '**.takeshape.io'
+        },
+        {
+          protocol: 'https',
+          hostname: '**.wp.com'
         }
       ]
     }

@@ -10,12 +10,18 @@ export type StorefrontCollectionItem = {
 
 export type StorefrontCollection = CollectionBase<StorefrontCollectionItem>;
 
-type Storefront = GetStorefrontQueryResponse['storefront'];
+type Storefront = GetStorefrontQueryResponse['storefront']['storefront'];
+
+export const typePrefix = 'WP_Page_Storefront_Components_';
+export const backgroundTypePrefix = 'WP_Page_Storefront_Components_BackgroundImageComponent_Components_';
+
 export type StorefrontChild = Storefront['components'][0];
 export type BackgroundImageChild = (StorefrontChild & {
-  __typename: 'BackgroundImageComponent';
+  __typename: `${typeof typePrefix}BackgroundImageComponent`;
 })['components'][0];
 
-export type StorefrontCollectionComponent = StorefrontChild & { __typename?: 'CollectionComponent' };
+export type StorefrontCollectionComponent = StorefrontChild & {
+  __typename?: `${typeof typePrefix}CollectionComponent`;
+};
 export type StorefrontCollectionComponentProduct =
-  StorefrontCollectionComponent['collection']['shopifyCollection']['products']['nodes'][0];
+  StorefrontCollectionComponent['shopifyCollection']['products']['nodes'][0];

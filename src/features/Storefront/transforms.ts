@@ -42,7 +42,7 @@ function getCollectionItem(shopifyProduct: StorefrontCollectionComponentProduct)
 }
 
 export function getCollection(component: StorefrontCollectionComponent): StorefrontCollection {
-  const collection = component?.collection?.shopifyCollection;
+  const collection = component?.shopifyCollection;
 
   if (!collection) {
     return null;
@@ -61,7 +61,7 @@ export function getCollection(component: StorefrontCollectionComponent): Storefr
 }
 
 export function getStorefront(response: GetStorefrontQueryResponse) {
-  const storefront = response?.storefront;
+  const storefront = response?.storefront?.storefront;
 
   if (!storefront) {
     return null;

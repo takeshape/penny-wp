@@ -1,9 +1,8 @@
-import { getImageUrl } from '@takeshape/routing';
 import NextImage from 'components/NextImage';
-import { StorefrontChild } from 'features/Storefront/types';
+import { StorefrontChild, typePrefix } from 'features/Storefront/types';
 import { PropsWithChildren } from 'react';
 
-type BackgroundImageProps = StorefrontChild & { __typename: 'BackgroundImageComponent' };
+type BackgroundImageProps = StorefrontChild & { __typename: `${typeof typePrefix}BackgroundImageComponent` };
 
 export const BackgroundImage = ({ image, children }: PropsWithChildren<BackgroundImageProps>) => {
   return (
@@ -13,8 +12,8 @@ export const BackgroundImage = ({ image, children }: PropsWithChildren<Backgroun
         <div className="absolute inset-0 max-w-7xl mx-auto overflow-hidden xl:px-8">
           <div className="w-full h-full">
             <NextImage
-              src={getImageUrl(image)}
-              alt={image.description ?? ''}
+              src={image.sourceUrl}
+              alt={image.altText ?? ''}
               className="w-full h-full object-center object-cover"
               height={1000}
               width={1000}

@@ -1,7 +1,7 @@
 import Button from 'components/Button/Button';
-import { BackgroundImageChild } from 'features/Storefront/types';
+import { BackgroundImageChild, backgroundTypePrefix } from 'features/Storefront/types';
 
-type SaleProps = BackgroundImageChild & { __typename: 'SaleComponent' };
+type SaleProps = BackgroundImageChild & { __typename: `${typeof backgroundTypePrefix}SalesComponent` };
 
 export const Sale = ({ buttonText, primaryText, secondaryText }: SaleProps) => {
   return (

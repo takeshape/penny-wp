@@ -1,9 +1,9 @@
 import { getImageUrl } from '@takeshape/routing';
 import Button from 'components/Button/Button';
 import NextImage from 'components/NextImage';
-import { StorefrontChild } from 'features/Storefront/types';
+import { StorefrontChild, typePrefix } from 'features/Storefront/types';
 
-type HeroProps = StorefrontChild & { __typename?: 'HeroComponent' };
+type HeroProps = StorefrontChild & { __typename?: `${typeof typePrefix}HeroComponent` };
 
 export const Hero = ({ primaryText, secondaryText, buttonText, image }: HeroProps) => {
   return (
@@ -24,8 +24,8 @@ export const Hero = ({ primaryText, secondaryText, buttonText, image }: HeroProp
         </div>
         <div className="w-full h-48 sm:h-64 lg:absolute lg:top-0 lg:right-0 lg:w-1/2 lg:h-full">
           <NextImage
-            src={getImageUrl(image)}
-            alt={image.description ?? ''}
+            src={image.sourceUrl}
+            alt={image.altText ?? ''}
             className="w-full h-full object-center object-cover"
             height={1000}
             width={1000}

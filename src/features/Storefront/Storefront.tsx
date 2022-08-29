@@ -6,13 +6,13 @@ import { Hero } from './Hero/Hero';
 import { Offers } from './Offers/Offers';
 import { Sale } from './Sale/Sale';
 import { Testimonials } from './Testimonials/Testimonials';
-import { BackgroundImageChild, StorefrontChild } from './types';
+import { BackgroundImageChild, backgroundTypePrefix, StorefrontChild, typePrefix } from './types';
 
 function backgroundImageChildToComponent(component: BackgroundImageChild, index = 0) {
   switch (component.__typename) {
-    case 'SaleComponent':
+    case `${backgroundTypePrefix}SalesComponent` as const:
       return <Sale key={index} {...component} />;
-    case 'TestimonialsComponent':
+    case `${backgroundTypePrefix}TestimonialsComponent` as const:
       return <Testimonials key={index} {...component} />;
     default:
       return null;
@@ -22,19 +22,19 @@ function backgroundImageChildToComponent(component: BackgroundImageChild, index 
 function storefrontChildToComponent() {
   const StorefrontComponent = (component: StorefrontChild, index = 0) => {
     switch (component.__typename) {
-      case 'BackgroundImageComponent':
+      case `${typePrefix}BackgroundImageComponent` as const:
         return (
           <BackgroundImage key={index} {...component}>
             {component.components.map(backgroundImageChildToComponent)}
           </BackgroundImage>
         );
-      case 'CollectionsComponent':
+      case `${typePrefix}CollectionsComponent` as const:
         return <Collections key={index} {...component} />;
-      case 'HeroComponent':
+      case `${typePrefix}HeroComponent` as const:
         return <Hero key={index} {...component} />;
-      case 'OffersComponent':
+      case `${typePrefix}OffersComponent` as const:
         return <Offers key={index} {...component} />;
-      case 'CollectionComponent':
+      case `${typePrefix}CollectionComponent` as const:
         return <Collection key={index} {...component} />;
       default:
         return null;
@@ -45,7 +45,7 @@ function storefrontChildToComponent() {
 }
 
 export interface StorefrontProps {
-  storefront: GetStorefrontQueryResponse['storefront'];
+  storefront: GetStorefrontQueryResponse['storefront']['storefront'];
 }
 
 export const Storefront = ({ storefront }: StorefrontProps) => {

@@ -1,6 +1,6 @@
-import { BackgroundImageChild } from 'features/Storefront/types';
+import { BackgroundImageChild, backgroundTypePrefix } from 'features/Storefront/types';
 
-type TestimonialsProps = BackgroundImageChild & { __typename: 'TestimonialsComponent' };
+type TestimonialsProps = BackgroundImageChild & { __typename: `${typeof backgroundTypePrefix}TestimonialsComponent` };
 
 export const Testimonials = ({ testimonials }: TestimonialsProps) => {
   if (!testimonials || !testimonials.length) return null;

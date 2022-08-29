@@ -1,9 +1,9 @@
 import NextLink from 'components/NextLink';
 import { getCollection } from '../transforms';
-import { StorefrontChild } from '../types';
+import { StorefrontChild, typePrefix } from '../types';
 import { CollectionItem } from './CollectionItem';
 
-export type CollectionProps = StorefrontChild & { __typename?: 'CollectionComponent' };
+export type CollectionProps = StorefrontChild & { __typename?: `${typeof typePrefix}CollectionComponent` };
 
 export const Collection = (props: CollectionProps) => {
   const collection = getCollection(props);

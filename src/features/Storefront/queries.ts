@@ -49,38 +49,34 @@ const StorefrontFragments = gql`
 export const GetStorefrontQuery = gql`
   ${StorefrontFragments}
   query GetStorefrontQuery {
-    storefront: getStorefront {
-      components {
-        __typename
-        ... on OffersComponent {
-          offers {
-            href
-            name
-            description
-          }
-        }
-        ... on HeroComponent {
-          primaryText
-          secondaryText
-          buttonText
-          image {
-            path
-            description
-          }
-        }
-        ... on CollectionsComponent {
-          collections {
-            name
-            description
-            href
+    storefront: WP_storefront {
+      storefront {
+        components {
+          __typename
+          ... on WP_Page_Storefront_Components_HeroComponent {
+            primaryText
+            secondaryText
+            buttonText
             image {
-              path
-              description
+              srcSet
+              sourceUrl
+              altText
             }
           }
-        }
-        ... on CollectionComponent {
-          collection {
+          ... on WP_Page_Storefront_Components_SalesComponent {
+            primaryText
+            secondaryText
+            buttonText
+          }
+          ... on WP_Page_Storefront_Components_OffersComponent {
+            offers {
+              name
+              description
+              href
+            }
+          }
+          ... on WP_Page_Storefront_Components_CollectionComponent {
+            collection
             shopifyCollection {
               ...StorefrontCollection
               products(first: 4) {
@@ -96,23 +92,74 @@ export const GetStorefrontQuery = gql`
               }
             }
           }
-        }
-        ... on BackgroundImageComponent {
-          image {
-            path
-            description
-          }
-          components {
-            __typename
-            ... on SaleComponent {
-              primaryText
-              secondaryText
-              buttonText
+          ... on WP_Page_Storefront_Components_CollectionsComponent {
+            collections {
+              name
+              description
+              href
+              image {
+                srcSet
+                sourceUrl
+                altText
+              }
             }
-            ... on TestimonialsComponent {
-              testimonials {
-                quote
-                attribution
+          }
+          ... on WP_Page_Storefront_Components_TestimonialsComponent {
+            testimonials {
+              quote
+              attribution
+            }
+          }
+          ... on WP_Page_Storefront_Components_BackgroundImageComponent {
+            image {
+              srcSet
+              sourceUrl
+              altText
+            }
+            components {
+              __typename
+              ... on WP_Page_Storefront_Components_BackgroundImageComponent_Components_HeroComponent {
+                primaryText
+                secondaryText
+                buttonText
+                image {
+                  srcSet
+                  sourceUrl
+                  altText
+                }
+              }
+              ... on WP_Page_Storefront_Components_BackgroundImageComponent_Components_SalesComponent {
+                primaryText
+                secondaryText
+                buttonText
+              }
+              ... on WP_Page_Storefront_Components_BackgroundImageComponent_Components_OffersComponent {
+                offers {
+                  name
+                  description
+                  href
+                }
+              }
+              ... on WP_Page_Storefront_Components_BackgroundImageComponent_Components_CollectionComponent {
+                collection
+              }
+              ... on WP_Page_Storefront_Components_BackgroundImageComponent_Components_CollectionsComponent {
+                collections {
+                  name
+                  description
+                  href
+                  image {
+                    srcSet
+                    sourceUrl
+                    altText
+                  }
+                }
+              }
+              ... on WP_Page_Storefront_Components_BackgroundImageComponent_Components_TestimonialsComponent {
+                testimonials {
+                  quote
+                  attribution
+                }
               }
             }
           }

@@ -1,10 +1,10 @@
 import { getImageUrl } from '@takeshape/routing';
 import NextImage from 'components/NextImage';
 import NextLink from 'components/NextLink';
-import { StorefrontChild } from 'features/Storefront/types';
+import { StorefrontChild, typePrefix } from 'features/Storefront/types';
 
 type CollectionsProps = StorefrontChild & {
-  __typename: 'CollectionsComponent';
+  __typename: `${typeof typePrefix}CollectionsComponent`;
 };
 
 export const Collections = ({ collections }: CollectionsProps) => {
@@ -22,8 +22,8 @@ export const Collections = ({ collections }: CollectionsProps) => {
               <div key={name} className="group relative">
                 <div className="w-full h-80 bg-background rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
                   <NextImage
-                    alt={image.description ?? ''}
-                    src={getImageUrl(image)}
+                    alt={image.altText ?? ''}
+                    src={image.sourceUrl}
                     height={500}
                     width={500}
                     className="w-full h-full object-center object-cover"
