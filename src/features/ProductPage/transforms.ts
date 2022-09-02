@@ -197,9 +197,38 @@ export function getPolicies(response: ProductPageShopifyProductResponse): Produc
   };
 }
 
-export function getDetails(response: ProductPageShopifyProductResponse): ProductPageDetails {
-  const details = response?.product?.takeshape?.details;
+const imgSrcRegex = /src="([^"]+)"/;
 
+export function getDetails(response: ProductPageShopifyProductResponse): ProductPageDetails {
+  const blocksJSON = response?.product?.wordpress?.blocksJSON;
+  const blocks = blocksJSON && JSON.parse(blocksJSON);
+
+  if (blocks) {
+    const { primary, secondary } = blocks[0].attributes;
+
+    const details = blocks[0].innerBlocks
+      .filter((innerBlock) => innerBlock.name === 'genesis-custom-blocks/product-page-details')
+      .map((innerBlock) => {
+        const matches = imgSrcRegex.exec(innerBlock.dynamicContent);
+        return {
+          image: {
+            url: matches?.[1],
+            altText: ''
+          },
+          description: innerBlock.attributes.description
+        };
+      });
+
+    return {
+      text: {
+        primary,
+        secondary
+      },
+      details
+    };
+  }
+
+  const details = response?.product?.takeshape?.details;
   if (!details) {
     return null;
   }
@@ -238,7 +267,7 @@ export function getPageOptions(response: ProductPageShopifyProductResponse): Pro
   }
 
   return {
-    showDetails: takeshapeProduct.showDetails ?? false,
+    showDetails: true,
     showPolicies: takeshapeProduct.showPolicies ?? false,
     showReviewsIo: takeshapeProduct.hideReviews === true ? false : enableReviewsIo,
     showTrustpilot: takeshapeProduct.hideReviews === true ? false : enableTrustpilot,

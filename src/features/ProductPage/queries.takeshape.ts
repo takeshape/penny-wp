@@ -93,6 +93,9 @@ export const ProductPageShopifyProductQuery = gql`
           }
         }
       }
+      wordpress {
+        blocksJSON
+      }
       standardizedProductType {
         productTaxonomyNode {
           name
