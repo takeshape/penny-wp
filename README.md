@@ -17,19 +17,19 @@ directory. [The instructions section of this README will teach you how to do tha
 
 | Category | Score |
 | -------- | ----- |
-| [Path: /](https://penny-34w8rs9m5-takeshape.vercel.app/) | [Report](https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1662842074882-23519.report.html) |
-| 🟢 Performance | 100 |
-| 🟢 Accessibility | 100 |
-| 🟢 Best practices | 100 |
-| 🟢 SEO | 90 |
-| 🟢 PWA | 100 |
-| [Path: /product/__lighthouse](https://penny-34w8rs9m5-takeshape.vercel.app/product/__lighthouse) | [Report](https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1662842075281-32504.report.html) |
+| [Path: /](https://penny-8t3eblf0x-takeshape.vercel.app/) | [Report](https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1662842413048-91155.report.html) |
 | 🟢 Performance | 100 |
 | 🟢 Accessibility | 100 |
 | 🟢 Best practices | 100 |
 | 🟢 SEO | 100 |
 | 🟢 PWA | 100 |
-| [Path: /collection/__lighthouse](https://penny-34w8rs9m5-takeshape.vercel.app/collection/__lighthouse) | [Report](https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1662842075782-79122.report.html) |
+| [Path: /product/__lighthouse](https://penny-8t3eblf0x-takeshape.vercel.app/product/__lighthouse) | [Report](https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1662842413503-93533.report.html) |
+| 🟢 Performance | 100 |
+| 🟢 Accessibility | 100 |
+| 🟢 Best practices | 100 |
+| 🟢 SEO | 100 |
+| 🟢 PWA | 100 |
+| [Path: /collection/__lighthouse](https://penny-8t3eblf0x-takeshape.vercel.app/collection/__lighthouse) | [Report](https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1662842414076-76615.report.html) |
 | 🟢 Performance | 100 |
 | 🟢 Accessibility | 100 |
 | 🟢 Best practices | 100 |
