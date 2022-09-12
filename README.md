@@ -17,19 +17,19 @@ directory. [The instructions section of this README will teach you how to do tha
 
 | Category | Score |
 | -------- | ----- |
-| [Path: /](https://penny-145hg10ky-takeshape.vercel.app/) | [Report](https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1663006422453-59223.report.html) |
+| [Path: /](https://penny-5ik1tqkkw-takeshape.vercel.app/) | [Report](https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1663006802670-22388.report.html) |
+| 🟢 Performance | 99 |
+| 🟢 Accessibility | 100 |
+| 🟢 Best practices | 100 |
+| 🟢 SEO | 100 |
+| 🟢 PWA | 100 |
+| [Path: /product/__lighthouse](https://penny-5ik1tqkkw-takeshape.vercel.app/product/__lighthouse) | [Report](https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1663006803177-92185.report.html) |
 | 🟢 Performance | 100 |
 | 🟢 Accessibility | 100 |
 | 🟢 Best practices | 100 |
 | 🟢 SEO | 100 |
 | 🟢 PWA | 100 |
-| [Path: /product/__lighthouse](https://penny-145hg10ky-takeshape.vercel.app/product/__lighthouse) | [Report](https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1663006422787-88511.report.html) |
-| 🟢 Performance | 100 |
-| 🟢 Accessibility | 100 |
-| 🟢 Best practices | 100 |
-| 🟢 SEO | 100 |
-| 🟢 PWA | 100 |
-| [Path: /collection/__lighthouse](https://penny-145hg10ky-takeshape.vercel.app/collection/__lighthouse) | [Report](https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1663006423332-8245.report.html) |
+| [Path: /collection/__lighthouse](https://penny-5ik1tqkkw-takeshape.vercel.app/collection/__lighthouse) | [Report](https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1663006803666-84468.report.html) |
 | 🟢 Performance | 100 |
 | 🟢 Accessibility | 100 |
 | 🟢 Best practices | 100 |
